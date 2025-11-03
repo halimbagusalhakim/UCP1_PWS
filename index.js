@@ -17,3 +17,12 @@ db.sequelize.sync().then(() => {
 }).catch((err) => {
     console.log(err);
 });
+
+app.get('/obat', async (req, res) => {
+    try {
+        const obat = await db.obat.findAll();
+        res.send(obat);
+    } catch (err) {
+        res.send(err);
+    }
+});
