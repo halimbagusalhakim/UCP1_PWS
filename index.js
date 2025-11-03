@@ -18,7 +18,7 @@ db.sequelize.sync().then(() => {
     console.log(err);
 });
 
-app.get('/obat', async (req, res) => {
+app.get('/buku', async (req, res) => {
     try {
         const obat = await db.obat.findAll();
         res.send(obat);
