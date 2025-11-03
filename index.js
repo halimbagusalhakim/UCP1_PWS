@@ -26,3 +26,14 @@ app.get('/buku', async (req, res) => {
         res.send(err);
     }
 });
+
+app.post('/buku', async (req, res) => {
+    const data = req.body;
+    try {
+        const obat = await db.obat.create(data);
+        res.send(obat);
+    }catch (err) {
+        res.send(err);
+    }
+});
+
